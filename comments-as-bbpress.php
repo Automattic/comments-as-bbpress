@@ -25,5 +25,15 @@ function bbp_subforum_replacer_custom_comments_template() {
 	return dirname(__FILE__) . '/templates/custom-comments.php';
 }
 
-
 add_filter( 'comments_template', 'bbp_subforum_replacer_custom_comments_template' );
+
+/**
+ * Make it compatible with twentytwentytwo
+ * props Google and Steveorevo https://wordpress.org/support/topic/blank-topic-pages-on-bbpress-while-using-twenty-twenty-two-theme/#post-15612896
+ */
+add_filter( 'template_include', function( $template ) {
+	if ( false !== strpos($template, 'twentytwentytwo/index.php') ) {
+		$template = ABSPATH . WPINC . '/template-canvas.php';
+	}
+	return $template;
+});

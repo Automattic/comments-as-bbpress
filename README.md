@@ -3,7 +3,7 @@ Comments as bbPress - Replaces the comments section of a regular post with a bbP
 
 ### Usage
 
-* Install bbPress alongside this plugin.
+* Install bbPress alongside [this plugin](https://github.com/Automattic/comments-as-bbpress/zipball/trunk).
 * Activate both.
 * Enjoy!
 

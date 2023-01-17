@@ -5,5 +5,6 @@ Comments as bbPress - Replaces the comments section of a regular post with a bbP
 
 * Install bbPress alongside this plugin.
 * Activate both.
+* Enjoy!
 
 

@@ -15,6 +15,7 @@ function bbp_subforum_replacer_custom_comments_template() {
 			'post_status' => 'publish',
 		) );
 		update_post_meta( $post->ID, 'bbp_subforum_id', $subforum_id );
+		update_post_meta( $subforum_id, 'bbp_subforum__post_id', $post->ID );
 	}
 	add_filter( 'bbp_get_forum_id', function() use ( $subforum_id ) {
 		return $subforum_id;

@@ -27,7 +27,6 @@ function bbp_subforum_replacer_custom_comments_template() {
 	// Register a custom template directory with bbPress only if we are going to render the comments.
 	function comments_as_bbpress_template_stack( $stack ) {
 		array_unshift( $stack, plugin_dir_path( __FILE__ ) . 'templates/' );
-		error_log(print_r($stack, true));
 		return $stack;
 	}
 	add_filter( 'bbp_get_template_stack', 'comments_as_bbpress_template_stack' );

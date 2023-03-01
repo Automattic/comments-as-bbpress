@@ -23,28 +23,28 @@ function bbp_subforum_replacer_custom_comments_template() {
 	$post = get_post( $subforum_id, OBJECT );
 	setup_postdata( $post );
 	bbp_set_query_name( 'bbp_single_forum' );
+
+	// Register a custom template directory with bbPress only if we are going to render the comments.
+	function comments_as_bbpress_template_stack( $stack ) {
+		array_unshift( $stack, plugin_dir_path( __FILE__ ) . 'templates/' );
+		error_log(print_r($stack, true));
+		return $stack;
+	}
+	add_filter( 'bbp_get_template_stack', 'comments_as_bbpress_template_stack' );
+
+	// Load a custom template for the loop-single-topic template part
+	function my_custom_bbpress_template_part( $templates, $slug, $name ) {
+		if ( $slug === 'loop' && $name === 'single-topic' ) {
+			$templates = array( 'comments-as-bbpress-loop-single-topic.php' );
+		}
+		return $templates;
+	}
+	add_filter( 'bbp_get_template_part', 'my_custom_bbpress_template_part', 10, 3 );
+
 	return dirname(__FILE__) . '/templates/custom-comments.php';
 }
 
 add_filter( 'comments_template', 'bbp_subforum_replacer_custom_comments_template' );
-
-// Register a custom template directory with bbPress
-function comments_as_bbpress_template_stack( $stack ) {
-	array_unshift( $stack, plugin_dir_path( __FILE__ ) . 'templates/' );
-	return $stack;
-}
-add_filter( 'bbp_get_template_stack', 'comments_as_bbpress_template_stack' );
-
-//// Load a custom template for the loop-single-topic template part
-/// (not sure yet this is needed as I am not sure if this template is used in other parts)
-//function my_custom_bbpress_template_part( $templates, $slug, $name ) {
-//	if ( $slug === 'loop' && $name === 'single-topic' ) {
-//		$templates = array( 'loop-single-topic.php' );
-//	}
-//	return $templates;
-//}
-//add_filter( 'bbp_get_template_part', 'my_custom_bbpress_template_part', 10, 3 );
-
 
 /**
  * Make it compatible with twentytwentytwo

@@ -28,6 +28,24 @@ function bbp_subforum_replacer_custom_comments_template() {
 
 add_filter( 'comments_template', 'bbp_subforum_replacer_custom_comments_template' );
 
+// Register a custom template directory with bbPress
+function comments_as_bbpress_template_stack( $stack ) {
+	array_unshift( $stack, plugin_dir_path( __FILE__ ) . 'templates/' );
+	return $stack;
+}
+add_filter( 'bbp_get_template_stack', 'comments_as_bbpress_template_stack' );
+
+//// Load a custom template for the loop-single-topic template part
+/// (not sure yet this is needed as I am not sure if this template is used in other parts)
+//function my_custom_bbpress_template_part( $templates, $slug, $name ) {
+//	if ( $slug === 'loop' && $name === 'single-topic' ) {
+//		$templates = array( 'loop-single-topic.php' );
+//	}
+//	return $templates;
+//}
+//add_filter( 'bbp_get_template_part', 'my_custom_bbpress_template_part', 10, 3 );
+
+
 /**
  * Make it compatible with twentytwentytwo
  * props Google and Steveorevo https://wordpress.org/support/topic/blank-topic-pages-on-bbpress-while-using-twenty-twenty-two-theme/#post-15612896

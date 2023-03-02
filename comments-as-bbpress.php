@@ -31,7 +31,7 @@ function comments_template() {
 	add_filter( 'bbp_get_forum_id', function() use ( $forum_id ) {
 		return $forum_id;
 	} );
-	$post = get_post( $forum_id, OBJECT );
+	$post = get_post( $forum_id );
 	setup_postdata( $post );
 	bbp_set_query_name( 'bbp_single_forum' );
 

@@ -78,3 +78,10 @@ add_filter( 'comments_template', '\Automattic\CommentsAsbbPress\comments_templat
 
 // Include the Twenty Twenty-Two theme compatibility code.
 require_once plugin_dir_path( __FILE__ ) . 'twentytwentytwo-compatibility.php';
+
+function enqueue_styles()
+{
+	wp_dequeue_style('bbp-default');
+	wp_enqueue_style('comments-as-bbpress', plugin_dir_url(__FILE__) . 'comments-as-bbpress.css', array(), '1.0');
+}
+add_action('wp_enqueue_scripts', '\Automattic\CommentsAsbbPress\enqueue_styles');

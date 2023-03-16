@@ -7,10 +7,19 @@
 .bbpress-wrapper > * {
     display: block;
     max-width: 610px;
-    margin: 0 auto;
+    margin: 2em auto;
     text-align: left;
 }
 
-.bbp-header {
+.bbpress-wrapper li {
+    list-style-type: none;
+    padding: 0.5em;
+}
+
+.bbp-header, .bbp-footer {
     display: none;
+}
+
+.bbpress-wrapper .bbp-topic-title {
+    margin-bottom: 0.5em;
 }

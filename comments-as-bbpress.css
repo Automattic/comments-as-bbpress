@@ -1,35 +1,16 @@
-/* Container */
-.bbp-forum-container {
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.bbpress-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Forum title */
-.bbp-forum-container .bbp-forum-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.bbpress-wrapper > * {
+    display: block;
+    max-width: 610px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-/* Forum description */
-.bbp-forum-container .bbp-forum-content {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Other forum styles */
-.bbp-forum-container .bbp-forums-list {
-    font-size: 0.9rem;
-}
-
-.bbp-forum-container .bbp-pagination {
-    margin-top: 1rem;
-}
-
-.bbp-forum-container .bbp-topic-form,
-.bbp-forum-container .bbp-reply-form {
-    margin-top: 2rem;
+.bbp-header {
+    display: none;
 }

@@ -1,25 +1,52 @@
 .bbpress-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.bbpress-wrapper > * {
-    display: block;
     max-width: 610px;
-    margin: 2em auto;
-    text-align: left;
+    margin: 0 auto;
 }
 
-.bbpress-wrapper li {
-    list-style-type: none;
-    padding: 0.5em;
+.bbpress-wrapper .bbp-topics {
+    margin: 24px 0;
 }
 
-.bbp-header, .bbp-footer {
-    display: none;
+.bbpress-wrapper .topic {
+    border: 1px solid #ccc;
+    padding: 24px;
+}
+
+.bbpress-wrapper .topic + .topic {
+    border-top: none;
+}
+
+.bbpress-wrapper .bbp-pagination {
+    margin-bottom: 24px;
+}
+
+.bbpress-wrapper .blocks-everywhere .editor-styles-wrapper {
+    background: #ffffff;
 }
 
 .bbpress-wrapper .bbp-topic-title {
     margin-bottom: 0.5em;
 }
+
+.bbpress-wrapper .bbp-topic-title .bbp-topic-permalink {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.0275em;
+}
+
+.bbpress-wrapper .bbp-topic-started-by {
+    display: inline-flex;
+    font-size: 14px;
+}
+
+.bbpress-wrapper .bbp-author-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.bbpress-wrapper .bbp-author-avatar img {
+    margin: 0 4px;
+    border-radius: 100%;
+}
+
+

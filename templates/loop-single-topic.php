@@ -11,8 +11,8 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
-    <li class="bbp-topic-title">
+<div id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
+    <div class="bbp-topic-title">
 
 		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 
@@ -47,13 +47,13 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php bbp_topic_row_actions(); ?>
 
-    </li>
+    </div>
 
 <!--    <li class="bbp-topic-voice-count">--><?php //bbp_topic_voice_count(); ?><!--</li>-->
 <!---->
 <!--    <li class="bbp-topic-reply-count">--><?php //bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?><!--</li>-->
 
-    <li class="bbp-topic-excerpt">
+    <div class="bbp-topic-excerpt">
 		<?php bbp_reply_excerpt( bbp_get_topic_last_active_id(), bbp_get_topic_id() ); ?>
-    </li>
-</ul><!-- #bbp-topic-<?php bbp_topic_id(); ?> -->
+    </div>
+</div><!-- #bbp-topic-<?php bbp_topic_id(); ?> -->

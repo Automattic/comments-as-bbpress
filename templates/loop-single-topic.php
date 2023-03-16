@@ -9,7 +9,6 @@
 
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
-
 ?>
 
 <ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>

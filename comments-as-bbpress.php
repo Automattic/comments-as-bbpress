@@ -54,24 +54,6 @@ function comments_template() {
 	// Register a custom template directory with bbPress.
 	add_filter( 'bbp_get_template_stack', '\Automattic\CommentsAsbbPress\template_stack' );
 
-	/**
-	 * Load a custom template for the loop-single-topic template part.
-	 *
-	 * @param array  $templates An array of template filenames to search for.
-	 * @param string $slug      The slug name for the generic template.
-	 * @param string $name      The name of the specialized template.
-	 * @return array The updated template filenames.
-	 */
-	function custom_template_part( $templates, $slug, $name ) {
-		if ( $slug === 'loop' && $name === 'single-topic' ) {
-			$templates = array( 'comments-as-bbpress-loop-single-topic.php' );
-		}
-		return $templates;
-	}
-
-	// Load a custom template for the loop-single-topic template part.
-	add_filter( 'bbp_get_template_part', '\Automattic\CommentsAsbbPress\custom_template_part', 10, 3 );
-
 	return dirname( __FILE__ ) . '/templates/custom-comments.php';
 }
 add_filter( 'comments_template', '\Automattic\CommentsAsbbPress\comments_template' );

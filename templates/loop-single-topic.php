@@ -49,34 +49,11 @@ defined( 'ABSPATH' ) || exit;
 
     </li>
 
-    <li class="bbp-topic-voice-count"><?php bbp_topic_voice_count(); ?></li>
+<!--    <li class="bbp-topic-voice-count">--><?php //bbp_topic_voice_count(); ?><!--</li>-->
+<!---->
+<!--    <li class="bbp-topic-reply-count">--><?php //bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?><!--</li>-->
 
-    <li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?></li>
-
-    <li class="bbp-topic-freshness">
-
-		<?php do_action( 'bbp_theme_before_topic_freshness_link' ); ?>
-
-		<?php bbp_topic_freshness_link(); ?>
-
-		<?php do_action( 'bbp_theme_after_topic_freshness_link' ); ?>
-
-        <p class="bbp-topic-meta">
-
-			<?php do_action( 'bbp_theme_before_topic_freshness_author' ); ?>
-
-            <span class="bbp-topic-freshness-author"><?php bbp_author_link( array(
-					'post_id' => bbp_get_topic_last_active_id(),
-					'size'    => 14
-				) ); ?></span>
-
-			<?php do_action( 'bbp_theme_after_topic_freshness_author' ); ?>
-
-        </p>
-
-        <div class="bbp-topic-excerpt">
-			<?php bbp_reply_excerpt( bbp_get_topic_last_active_id(), bbp_get_topic_id() ); ?>
-        </div><!-- .bbp-topic-excerpt -->
-
+    <li class="bbp-topic-excerpt">
+		<?php bbp_reply_excerpt( bbp_get_topic_last_active_id(), bbp_get_topic_id() ); ?>
     </li>
 </ul><!-- #bbp-topic-<?php bbp_topic_id(); ?> -->
